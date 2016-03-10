@@ -1,30 +1,15 @@
---------------------------------------------------
---      ____  ____ _____                        --
---     |    \|  _ )_   _|___ ____   __  __      --
---     | |_  )  _ \ | |/ ·__|  _ \_|  \/  |     --
---     |____/|____/ |_|\____/\_____|_/\/\_|     --
---                                              --
---------------------------------------------------
---                                              --
---       Developers: @Josepdal & @MaSkAoS       --
---     Support: @Skneos,  @iicc1 & @serx666     --
---                                              --
---------------------------------------------------
-
-do
 
 function run(msg, matches)
-  return این ربات با بهترین پلاگین ها ساخته شده است 🔥
-ادمین های این بات عبارتند از ✳
-@Dawsh_Arian
-@Code_x
+  return 'Telegram Bot '.. VERSION .. [[ 
+  Checkout http://git.io/FXGl
+  Forked from @yagop 
+  GNU v2 license.]]
 end
 
 return {
-  patterns = {
-    "^#version$"
-  }, 
-  run = run 
+    description = "Shows bot version", 
+    usage = "!version",
+    patterns = {"^!version$"}, 
+    run = run 
 }
 
-end
