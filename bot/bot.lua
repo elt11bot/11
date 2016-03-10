@@ -262,7 +262,7 @@ function create_config( )
       "lock_media",
       "hello",
       "echo",
-      
+      "id",
       "echofile",
       "anti-spam",
       "kickme",
