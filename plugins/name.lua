@@ -1,16 +1,22 @@
-do
-function run(msg, matches)
-local reply_id = msg['id']
 
-local info = '◘Name : '..msg.from.first_name..'\n'..msg.from.last_name..'\n'
-reply_msg(reply_id, info, ok_cb, false)
+ local function run(msg, matches)
+ if not is_momod(msg) then
+    return nil
+  end
+ 
+ local text = matches[1]
+ local chat = 'channel#id'..msg.to.id
+   
+   if msg.to.type == 'channel' then
+     rename_channel(chat, text, ok_cb, false)
+   return "Group Name Has Been Changed to "matches [1]""
+   end
 end
-
-return {
-patterns = {
-"^[!/#]name"
-},
-run = run
-}
-
-end
+ 
+ return {
+   patterns = {
+     "^[/!]setname +(.+)$"
+  }, 
+   run = run 
+ }
+ 
